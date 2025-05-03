@@ -1,21 +1,25 @@
 pipeline {
     agent any
+
     stages {
-        stage('Checkout') {
+        stage('Clone') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git url: 'https://github.com/prithesh-p/myproject.git'
             }
         }
+
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building the project...'
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing...'
+                echo 'Running tests...'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
